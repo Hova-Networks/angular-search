@@ -56,14 +56,6 @@
       text-transform: uppercase; }
       .search .press-enter kbd:hover {
         background: #aeaeae; }
-body {
-         background: #f8f8f8;
-         margin-top: 100px;
-         text-align: center;
-      }
-      a {
-         display: block;
-      }
       .search {
          padding-bottom: 27px;
       }
