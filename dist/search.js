@@ -14,13 +14,15 @@ angular.module("search.html", []).run(["$templateCache", function($templateCache
     "   ng-class=\"{ 'input-error': searchValidation }\"\n" +
     "   ng-disabled=\"disabled\"\n" +
     "   placeholder=\"{{ placeholder }}\"\n" +
+    "   msj=\"{{ msj }}\"\n" +
+    "   msjLength=\"{{ msjLength }}\"\n" +
     " >\n" +
     " <span\n" +
     "   class=\"press-enter\"\n" +
     "   ng-click=\"update()\"\n" +
     "   ng-show=\"!typeAhead && dirty && !loading\"\n" +
-    " >Press <kbd>enter</kbd> to search</span>\n" +
-    " <span ng-show=\"searchValidation\" class=\"error-label\">You have to enter at least {{minSearchLength}} characters</span>\n" +
+    " >{{msj}}</span>\n" +
+    " <span ng-show=\"searchValidation\" class=\"error-label\">{{msjLength}}</span>\n" +
     "</form>");
 }]);
 
@@ -48,7 +50,9 @@ angular.module('turn/search', ['turn/search/template']).constant('SEARCH_KEYS', 
         placeholder: '@',
         disabled: '=',
         search: '&',
-        minSearchLength: '@'
+        minSearchLength: '@',
+        msj:'@',
+        msjLength:'@'
       },
       templateUrl: 'search.html',
       link: function (scope, element, attrs) {
